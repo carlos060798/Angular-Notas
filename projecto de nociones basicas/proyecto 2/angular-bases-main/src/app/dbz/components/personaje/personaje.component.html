@@ -1,0 +1,19 @@
+<form 
+    (ngSubmit)="onSubmitdata()"
+    #formPersonaje="ngForm"
+    class="form"
+>
+    <div class="mb-3">
+        <label for="nombre" class="form-label">nombre</label>
+        <input type="text"  [(ngModel)]="personaje.nombre" class="form-control" id="nombre" 
+        name="nombre"
+        >
+    </div>
+    <div class="mb-3">
+        <label for="poder" class="form-label">poder</label>
+        <input type="number" [(ngModel)]="personaje.poder" class="form-control" id="poder"
+        name="poder"
+        >
+    </div>
+    <button type="submit" class="btn btn-primary">agregar</button>
+</form>

@@ -1,0 +1,16 @@
+
+<h2 class="text-center">
+    Dragon ball z
+</h2>
+<div class="row">
+    <div class="col">
+        <app-list-hero [Personajes]="personajes"
+        (onDelete)="onDeletePersonaje($event)"
+        ></app-list-hero>
+       
+    </div>
+    <div class="col">
+     <app-personaje (onNewPersonaje)="onAddPersonaje($event)"></app-personaje>
+    </div>
+
+</div>
