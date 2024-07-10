@@ -1,41 +1,42 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { CapitalPageComponent } from './pages/by-capital-page/capital-page.component';
+import { Routes, RouterModule } from '@angular/router';
+
+import { ByCapitalPageComponent } from './pages/by-capital-page/by-capital-page.component';
 import { ByCountryPageComponent } from './pages/by-country-page/by-country-page.component';
-import { ByRegionComponent } from './pages/by-region-page/by-region.component';
-import { ContryPageComponent } from './pages/contry-page/contry-page.component';
+import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.component';
+import { CountryPageComponent } from './pages/country-page/country-page.component';
 
-//  modelo de rutas de la aplicacion  internas de un modulo de la aplicacion  countries
-
-const  routes: Routes = [
+const routes: Routes = [
   {
-     path: 'by-capture',
-      component: CapitalPageComponent
-
+    path: 'by-capital',
+    component: ByCapitalPageComponent,
   },
   {
     path: 'by-country',
-    component: ByCountryPageComponent
+    component: ByCountryPageComponent,
   },
   {
     path: 'by-region',
-    component: ByRegionComponent
+    component: ByRegionPageComponent,
   },
   {
     path: 'by/:id',
-    component: ContryPageComponent
+    component: CountryPageComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'by-capital'
   }
+
 ]
+
 
 @NgModule({
   imports: [
-   RouterModule.forChild(routes)
+    RouterModule.forChild( routes )
   ],
   exports: [
     RouterModule
-  ]
-
+  ],
 })
-
-
 export class CountriesRoutingModule { }

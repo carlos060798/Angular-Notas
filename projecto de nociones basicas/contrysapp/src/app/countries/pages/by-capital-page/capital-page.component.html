@@ -1,1 +1,16 @@
-<p>capital-page works!</p>
+<h2>por capital</h2>
+<hr />
+
+<div class="row">
+  <div class="col">
+     <search-box
+      (onValue)="searchByCapital($event)"
+     placeholder="buscar por capital"></search-box>
+  </div>
+</div>
+<div>
+  <div class="col">
+    <hr>
+   <country-table [countries] ="countries"></country-table>
+  </div>
+</div>

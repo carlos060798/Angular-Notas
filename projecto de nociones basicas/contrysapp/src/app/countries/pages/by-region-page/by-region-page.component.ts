@@ -3,19 +3,19 @@ import { Country } from '../../interfaces/country';
 import { CountriesService } from '../../services/countries.service';
 
 @Component({
-  selector: 'app-by-country-page',
-  templateUrl: './by-country-page.component.html',
+  selector: 'app-by-region-page',
+  templateUrl: './by-region-page.component.html',
   styles: [
   ]
 })
-export class ByCountryPageComponent {
+export class ByRegionPageComponent {
 
   public countries: Country[] = [];
 
   constructor( private countriesService: CountriesService ) {}
 
-  searchByCountry( term: string ):void  {
-    this.countriesService.searchCountry( term )
+  searchByRegion( region: string ):void  {
+    this.countriesService.searchRegion( region )
       .subscribe( countries => {
         this.countries = countries;
       });
