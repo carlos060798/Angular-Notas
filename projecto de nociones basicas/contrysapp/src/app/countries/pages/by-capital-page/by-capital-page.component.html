@@ -5,14 +5,16 @@
   <div class="col">
       <!-- SearchBox -->
       <shared-search-box
-        (onValue)="searchByCapital($event)"
-        placeholder="Buscar por capital"></shared-search-box>
+        placeholder="Buscar por capital"
+        (onDebauce)="searchByCapital($event)"
+        ></shared-search-box>
   </div>
 </div>
 
 <div class="row">
   <div class="col">
     <hr>
+    <loading-spinner *ngIf="isloading"></loading-spinner>
     <countries-table [countries]="countries"></countries-table>
   </div>
 </div>
